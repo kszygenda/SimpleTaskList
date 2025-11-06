@@ -1,4 +1,6 @@
-package org.example;
+package org.example.cli;
+
+import org.example.model.TaskList;
 
 public class TaskListProgram {
     private final TaskList taskList;
