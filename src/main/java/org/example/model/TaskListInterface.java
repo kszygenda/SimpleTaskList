@@ -2,7 +2,7 @@ package org.example.model;
 
 import java.util.List;
 
-public interface TaskListInterface {
+public sealed interface TaskListInterface permits TaskList {
      List<String> getTasks();
      void addTask(String task);
      void removeTask(String task);

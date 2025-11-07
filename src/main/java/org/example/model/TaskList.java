@@ -3,7 +3,8 @@ package org.example.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaskList implements TaskListInterface {
+//TODO create JUnit Class Testing
+public final class TaskList implements TaskListInterface {
     private List<String> taskList;
 
     public TaskList(){
