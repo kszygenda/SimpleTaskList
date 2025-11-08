@@ -1,5 +1,8 @@
 package org.example.model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TaskModel {
     private int id;
     private String taskName;
@@ -18,4 +21,14 @@ public class TaskModel {
     public int getId(){
         return this.id;
     }
+
+    public Map<String,Object> getTaskAsMap() {
+        Map<String,Object> map = new HashMap<>();
+        map.put("id", id);
+        map.put("taskName", taskName);
+        map.put("taskDescription",taskDescription);
+        map.put("group",group);
+        return map;
+    }
+
 }
