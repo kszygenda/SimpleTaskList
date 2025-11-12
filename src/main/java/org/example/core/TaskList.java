@@ -1,4 +1,4 @@
-package org.example.model;
+package org.example.core;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -7,7 +7,7 @@ import java.util.Optional;
 
 //TODO create JUnit Class Testing
 public final class TaskList implements TaskListInterface {
-    private List<TaskModel> taskList;
+    private final List<TaskModel> taskList;
 
     public TaskList(){
         this.taskList = new ArrayList<>();

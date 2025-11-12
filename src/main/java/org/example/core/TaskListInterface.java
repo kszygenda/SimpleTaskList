@@ -1,4 +1,4 @@
-package org.example.model;
+package org.example.core;
 
 import java.util.List;
 
