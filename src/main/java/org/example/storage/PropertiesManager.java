@@ -4,14 +4,16 @@ import java.io.*;
 import java.util.Properties;
 
 public class PropertiesManager {
-    private static final String CONFIG_FILE = "app.properties";
-
-    public void createPropertiesFile() throws IOException {
+    public static final String CONFIG_FILE = "app.properties";
+    public static final String APP_NAME = "app.name";
+    public static final String APP_VERSION = "version";
+    public static final String APP_DATA_PATH = "data.path";
+    public static void createPropertiesFile() throws IOException {
         Properties config = new Properties();
 
-        config.setProperty("app.name","SimpleTaskList");
-        config.setProperty("version", "0.1.0");
-        config.setProperty("data.path", System.getProperty("user.home") + "/.tasklist-app/tasks.json");
+        config.setProperty(APP_NAME,"SimpleTaskList");
+        config.setProperty(APP_VERSION, "0.1.0");
+        config.setProperty(APP_DATA_PATH, System.getProperty("user.home") + "/.tasklist-app/tasks.json");
 
         try (OutputStream output = new FileOutputStream(CONFIG_FILE)){
             config.store(output, "SimpleTaskList App - config");
@@ -21,7 +23,7 @@ public class PropertiesManager {
         }
     }
 
-    public Properties readPropertiesFile() throws IOException {
+    public static Properties readPropertiesFile() throws IOException {
         Properties config = new Properties();
 
         try (InputStream input = new FileInputStream(CONFIG_FILE)){
@@ -33,10 +35,9 @@ public class PropertiesManager {
     }
 
     public static void main(String[] args){
-        PropertiesManager manager = new PropertiesManager();
         try {
-            manager.createPropertiesFile();
-            manager.readPropertiesFile();
+            PropertiesManager.createPropertiesFile();
+            PropertiesManager.readPropertiesFile();
         } catch (IOException e) {
             System.out.println(e);
         }
